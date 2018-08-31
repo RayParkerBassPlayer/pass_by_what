@@ -15,6 +15,7 @@ describe "PassByWhat?" do
 
     klass
   end
+  let(:array) { [1, 2, 3, 4] }
 
   it "Passes a simple type by value." do
     expect(int).to eq 5
@@ -38,6 +39,12 @@ describe "PassByWhat?" do
     expect(klass.string).to eq "Before"
     takes_klass(klass)
     expect(klass.string).to eq "BeforeBefore"
+  end
+
+  it "Passes an array by value." do
+    expect(array.count).to eq 4
+    takes_array(array)
+    expect(array.count).to eq 5
   end
 end
 

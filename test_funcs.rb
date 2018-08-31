@@ -14,4 +14,8 @@ module TestFuncs
   def takes_klass(klass)
     klass.string = klass.string * 2
   end
+
+  def takes_array(array)
+    array << 5
+  end
 end
